@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/x33eja/!svn/ver/65/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/entities
+END
+Employee.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/x33eja/!svn/ver/50/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/entities/Employee.java
+END
+BankTransaction.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/x33eja/!svn/ver/65/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/entities/BankTransaction.java
+END
+Customer.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/x33eja/!svn/ver/65/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/entities/Customer.java
+END
+Message.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/x33eja/!svn/ver/50/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/entities/Message.java
+END
+Person.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/x33eja/!svn/ver/50/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/entities/Person.java
+END
+UserData.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/x33eja/!svn/ver/50/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/entities/UserData.java
+END
+BankBranch.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/x33eja/!svn/ver/50/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/entities/BankBranch.java
+END
+Contact.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/x33eja/!svn/ver/50/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/entities/Contact.java
+END
+Template.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/x33eja/!svn/ver/59/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/entities/Template.java
+END
+Account.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/x33eja/!svn/ver/65/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/entities/Account.java
+END

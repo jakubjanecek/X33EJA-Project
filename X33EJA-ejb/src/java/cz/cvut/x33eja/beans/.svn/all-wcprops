@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/x33eja/!svn/ver/76/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/beans
+END
+MessageLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/x33eja/!svn/ver/58/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/beans/MessageLocal.java
+END
+JmsBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/x33eja/!svn/ver/58/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/beans/JmsBean.java
+END
+TransactionLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/x33eja/!svn/ver/58/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/beans/TransactionLocal.java
+END
+AccountBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/x33eja/!svn/ver/75/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/beans/AccountBean.java
+END
+UserBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/x33eja/!svn/ver/76/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/beans/UserBean.java
+END
+AccountLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/x33eja/!svn/ver/65/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/beans/AccountLocal.java
+END
+UserLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/x33eja/!svn/ver/65/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/beans/UserLocal.java
+END
+MessageBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/x33eja/!svn/ver/69/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/beans/MessageBean.java
+END
+TransactionBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/x33eja/!svn/ver/69/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/beans/TransactionBean.java
+END

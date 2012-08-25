@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/x33eja/!svn/ver/72/X33EJA/X33EJA-war/web/account
+END
+addTemplate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/x33eja/!svn/ver/60/X33EJA/X33EJA-war/web/account/addTemplate.jsp
+END
+menu.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/x33eja/!svn/ver/53/X33EJA/X33EJA-war/web/account/menu.jsp
+END
+showMessage.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/x33eja/!svn/ver/53/X33EJA/X33EJA-war/web/account/showMessage.jsp
+END
+index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/x33eja/!svn/ver/72/X33EJA/X33EJA-war/web/account/index.jsp
+END
+messages.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/x33eja/!svn/ver/66/X33EJA/X33EJA-war/web/account/messages.jsp
+END
+header.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/x33eja/!svn/ver/51/X33EJA/X33EJA-war/web/account/header.jsp
+END
+useTemplate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/x33eja/!svn/ver/60/X33EJA/X33EJA-war/web/account/useTemplate.jsp
+END
+order.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/x33eja/!svn/ver/66/X33EJA/X33EJA-war/web/account/order.jsp
+END
+templates.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/x33eja/!svn/ver/60/X33EJA/X33EJA-war/web/account/templates.jsp
+END
+footer.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/x33eja/!svn/ver/53/X33EJA/X33EJA-war/web/account/footer.jsp
+END
+editTemplate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/x33eja/!svn/ver/60/X33EJA/X33EJA-war/web/account/editTemplate.jsp
+END
+history.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/x33eja/!svn/ver/57/X33EJA/X33EJA-war/web/account/history.jsp
+END

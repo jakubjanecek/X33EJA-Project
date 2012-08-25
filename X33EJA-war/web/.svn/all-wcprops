@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/x33eja/!svn/ver/75/X33EJA/X33EJA-war/web
+END
+errorPage.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/x33eja/!svn/ver/75/X33EJA/X33EJA-war/web/errorPage.jsp
+END
+login.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/x33eja/!svn/ver/53/X33EJA/X33EJA-war/web/login.jsp
+END
+home.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/x33eja/!svn/ver/55/X33EJA/X33EJA-war/web/home.jsp
+END
+logout.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/x33eja/!svn/ver/55/X33EJA/X33EJA-war/web/logout.jsp
+END
+home_redir.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/x33eja/!svn/ver/55/X33EJA/X33EJA-war/web/home_redir.jsp
+END
+error403.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/x33eja/!svn/ver/75/X33EJA/X33EJA-war/web/error403.jsp
+END
+loginErr.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/x33eja/!svn/ver/53/X33EJA/X33EJA-war/web/loginErr.jsp
+END
+error404.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/x33eja/!svn/ver/68/X33EJA/X33EJA-war/web/error404.jsp
+END

@@ -1,0 +1,369 @@
+package cz.cvut.x33eja.managedbeans;
+
+import cz.cvut.x33eja.beans.AccountLocal;
+import cz.cvut.x33eja.beans.TransactionLocal;
+import cz.cvut.x33eja.entities.Account;
+import cz.cvut.x33eja.entities.BankTransaction;
+import cz.cvut.x33eja.entities.Customer;
+import cz.cvut.x33eja.entities.Template;
+import cz.cvut.x33eja.errors.ErrorWriter;
+import cz.cvut.x33eja.exceptions.NonExistingAccountException;
+import cz.cvut.x33eja.exceptions.NotEnoughMoneyException;
+import cz.cvut.x33eja.exceptions.ValidationException;
+import cz.cvut.x33eja.exceptions.ValidationException.*;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.model.SelectItem;
+import javax.faces.validator.ValidatorException;
+
+/**
+ *
+ * @author Jakub Janeček
+ */
+public class BankTransactionManagedBean {
+
+    @EJB
+    private TransactionLocal transactionBean;
+
+    @EJB
+    private AccountLocal accountBean;
+
+    private String fromAccount;
+
+    private String toAccount;
+
+    private String amount;
+
+    private String specSym;
+
+    private String consSym;
+
+    private String varSym;
+
+    private String message;
+
+    private String id;
+
+    private int selectedAccountId = 0;
+
+    private String cashierNumber;
+
+    private String cashierAmount;
+
+    private String actionMessage;
+
+    public BankTransactionManagedBean() {
+    }
+
+    public SelectItem[] getCustomersAccounts() {
+        List<Account> acc = ((Customer) accountBean.getCustomer()).getAccounts();
+        SelectItem[] res = new SelectItem[acc.size()];
+        int i = 0;
+        for (Account ac : acc) {
+            res[i] = new SelectItem(i, ac.getCustomer().getName() + " " + ac.getCustomer().getSurname() + " " + ac.getNumber());
+            i++;
+        }
+        return res;
+    }
+
+    public SelectItem[] getCustomersAccountsById() {
+        List<Account> acc = ((Customer) accountBean.getCustomer()).getAccounts();
+        SelectItem[] res = new SelectItem[acc.size()];
+        int i = 0;
+        for (Account ac : acc) {
+            res[i] = new SelectItem(i, ac.getCustomer().getName() + " " + ac.getCustomer().getSurname() + " " + ac.getNumber());
+            i++;
+        }
+        return res;
+    }
+
+    public List<BankTransaction> getIncomingBankTransactions() {
+<<<<<<< .mine
+        if (selectedAccountId >= 0) {
+            return ((Customer) accountBean.getCustomer()).getAccounts().get(selectedAccountId).getIncomingTransactions();
+        }
+        return new ArrayList<BankTransaction>();
+=======
+        List<Account> list = ((Customer) accountBean.getCustomer()).getAccounts();
+        if(list == null || list.size() == 0){
+            return new LinkedList<BankTransaction>();
+        }
+        return list.get(selectedAccountId).getIncomingTransactions();
+>>>>>>> .r71
+    }
+
+    public List<BankTransaction> getOutcomingBankTransactions() {
+<<<<<<< .mine
+        if (selectedAccountId >= 0) {
+            return ((Customer) accountBean.getCustomer()).getAccounts().get(selectedAccountId).getOutcomingTransactions();
+        }
+        return new ArrayList<BankTransaction>();
+=======
+        List<Account> list = ((Customer) accountBean.getCustomer()).getAccounts();
+        if(list == null || list.size() == 0){
+            return new LinkedList<BankTransaction>();
+        }
+        return list.get(selectedAccountId).getOutcomingTransactions();
+>>>>>>> .r71
+    }
+
+    public String order() {
+        if (consSym == null || consSym.equals("")) {
+            consSym = "0";
+        }
+        if (varSym == null || varSym.equals("")) {
+            varSym = "0";
+        }
+        if (specSym == null || specSym.equals("")) {
+            specSym = "0";
+        }
+        try {
+            transactionBean.transfer(((Customer) accountBean.getCustomer()).getAccounts().get(Integer.valueOf(fromAccount)).getNumber(), toAccount, new BigInteger(amount), Integer.parseInt(consSym), Long.parseLong(varSym), Long.parseLong(specSym), message);
+            setAmount(null);
+            setConsSym(null);
+            setFromAccount(null);
+            setMessage(null);
+            setSpecSym(null);
+            setToAccount(null);
+            setVarSym(null);
+            setActionMessage("Order successfully completed.");
+            return "success";
+        }
+        catch (NonExistingAccountException ex) {
+            ErrorWriter.writeError("Account does not exist!", "toAccount", FacesContext.getCurrentInstance());
+        }
+        catch (IllegalArgumentException ex) {
+            ErrorWriter.writeError("Amount must be a positive number!", "amount", FacesContext.getCurrentInstance());
+        }
+        catch (NotEnoughMoneyException ex) {
+            ErrorWriter.writeError("There is not enough money on your account!", "orderButton", FacesContext.getCurrentInstance());
+        }
+        catch (ValidationException ex) {
+            switch (ex.getType()) {
+                case AMOUNT_ERROR:
+                    ErrorWriter.writeError("Amount cannot be 0!", "amount", FacesContext.getCurrentInstance());
+                    break;
+                case CONS_ERROR:
+                    ErrorWriter.writeError("Cons symbol must be a natural number and less than 10000!", "consSym", FacesContext.getCurrentInstance());
+                    break;
+                case MSG_ERROR:
+                    ErrorWriter.writeError("Message can have 255 characters at maximum", "message", FacesContext.getCurrentInstance());
+                    break;
+                case SPEC_ERROR:
+                    ErrorWriter.writeError("Specific symbol must be a natural number and less than 10000000!", "specSym", FacesContext.getCurrentInstance());
+                    break;
+                case VAR_ERROR:
+                    ErrorWriter.writeError("Var symbol must be a natural number and less than 10000000!", "varSym", FacesContext.getCurrentInstance());
+                    break;
+            }
+        }
+        return "error";
+    }
+
+    public String select() {
+        if (id == null || id.equals("")) {
+            ErrorWriter.writeError("No template was selected", "select", FacesContext.getCurrentInstance());
+            return null;
+        }
+        Template t = accountBean.getTemplate(Long.valueOf(id));
+        this.id = String.valueOf(t.getId());
+        this.amount = String.valueOf(t.getAmount().intValue());
+        this.consSym = String.valueOf(t.getConsSym());
+        this.varSym = String.valueOf(t.getVarSym());
+        this.specSym = String.valueOf(t.getSpecSym());
+        this.message = t.getMessage();
+        this.toAccount = t.getAccount();
+        id = null;
+        return "select";
+    }
+
+    public String putMoney() {
+        setActionMessage("");
+        try {
+            transactionBean.transfer("0", cashierNumber, new BigInteger(cashierAmount), 0, 0, 0, "Cashier office " + (new Date()).toString());
+        }
+        catch (NonExistingAccountException ex) {
+            ErrorWriter.writeError("Account number does not exist!", "number", FacesContext.getCurrentInstance());
+            return null;
+        }
+        catch (IllegalArgumentException ex) {
+            ErrorWriter.writeError("Invalid parameters!", "amount", FacesContext.getCurrentInstance());
+            return null;
+        }
+        catch (NotEnoughMoneyException ex) {
+            ErrorWriter.writeError("Account does not have enough money!", "amount", FacesContext.getCurrentInstance());
+            return null;
+        }
+        catch (ValidationException ex) {
+            ErrorWriter.writeError("Invalid parameters!", "amount", FacesContext.getCurrentInstance());
+            return null;
+        }
+        cashierAmount = null;
+        cashierNumber = null;
+        setActionMessage("Order successfully completed.");
+        return "putSuccess";
+    }
+
+    public String selectAccount() {
+        return "selectSuccess";
+    }
+
+    public String withdrawMoney() {
+        setActionMessage("");
+        try {
+            transactionBean.transfer(cashierNumber, "0", new BigInteger(cashierAmount), 0, 0, 0, "Cashier office " + (new Date()).toString());
+        }
+        catch (NonExistingAccountException ex) {
+            ErrorWriter.writeError("Account number does not exist!", "number", FacesContext.getCurrentInstance());
+            return null;
+        }
+        catch (IllegalArgumentException ex) {
+            ErrorWriter.writeError("Invalid parameters!", "amount", FacesContext.getCurrentInstance());
+            return null;
+        }
+        catch (NotEnoughMoneyException ex) {
+            ErrorWriter.writeError("Account does not have enough money!", "amount", FacesContext.getCurrentInstance());
+            return null;
+        }
+        catch (ValidationException ex) {
+            ErrorWriter.writeError("Invalid parameters!", "amount", FacesContext.getCurrentInstance());
+            return null;
+        }
+        cashierAmount = null;
+        cashierNumber = null;
+        setActionMessage("Order successfully completed.");
+        return "withdrawSuccess";
+    }
+
+    public void validateNumber(FacesContext facesContext, UIComponent component, Object value) {
+        String number = (String) value;
+        if (number == null || number.equals("")) {
+            throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Number cannot be empty", "Number cannot be empty"));
+        }
+        if (!transactionBean.isAccountExist(number)) {
+            throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Number does not exist", "Number does not exist"));
+        }
+    }
+
+    public void validateAmount(FacesContext facesContext, UIComponent component, Object value) {
+        String number = (String) value;
+        if (number == null || number.equals("")) {
+            throw new ValidatorException(new FacesMessage("Amount cannot be empty", "Amount cannot be empty"));
+        }
+        double numberD = Double.valueOf(number);
+        if (numberD <= 0) {
+            throw new ValidatorException(new FacesMessage("Amount cannot be less than or equal to 0", "Amount cannot be less than or equal to 0"));
+        }
+    }
+
+    public String getActionMessage() {
+        return actionMessage;
+    }
+
+    public void setActionMessage(String actionMessage) {
+        this.actionMessage = actionMessage;
+    }
+
+    public String getCashierAmount() {
+        return cashierAmount;
+    }
+
+    public void setCashierAmount(String casherAmount) {
+        this.cashierAmount = casherAmount;
+    }
+
+    public String getCashierNumber() {
+        return cashierNumber;
+    }
+
+    public void setCashierNumber(String cashierNumber) {
+        this.cashierNumber = cashierNumber;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public int getSelectedAccountId() {
+        return selectedAccountId;
+    }
+
+    public void setSelectedAccountId(int selectedAccountId) {
+        this.selectedAccountId = selectedAccountId;
+    }
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+
+    public String getConsSym() {
+        return consSym;
+    }
+
+    public void setConsSym(String consSym) {
+        this.consSym = consSym;
+    }
+
+    public String getFromAccount() {
+        return fromAccount;
+    }
+
+    public void setFromAccount(String from) {
+        this.fromAccount = from;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getSpecSym() {
+        return specSym;
+    }
+
+    public void setSpecSym(String specSym) {
+        this.specSym = specSym;
+    }
+
+    public String getToAccount() {
+        return toAccount;
+    }
+
+    public void setToAccount(String to) {
+        this.toAccount = to;
+    }
+
+    public TransactionLocal getTransactionBean() {
+        return transactionBean;
+    }
+
+    public void setTransactionBean(TransactionLocal transactionBean) {
+        this.transactionBean = transactionBean;
+    }
+
+    public String getVarSym() {
+        return varSym;
+    }
+
+    public void setVarSym(String varSym) {
+        this.varSym = varSym;
+    }
+}

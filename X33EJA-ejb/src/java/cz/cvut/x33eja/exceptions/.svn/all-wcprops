@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/x33eja/!svn/ver/50/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/exceptions
+END
+NonExistingAccountException.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/x33eja/!svn/ver/50/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/exceptions/NonExistingAccountException.java
+END
+ValidationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/x33eja/!svn/ver/50/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/exceptions/ValidationException.java
+END
+NotEnoughMoneyException.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/x33eja/!svn/ver/50/X33EJA/X33EJA-ejb/src/java/cz/cvut/x33eja/exceptions/NotEnoughMoneyException.java
+END

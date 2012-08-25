@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="X33EJA-ejbPU" transaction-type="JTA">
+    <provider>oracle.toplink.essentials.PersistenceProvider</provider>
+    <jta-data-source>x33eja</jta-data-source>
+    <class>cz.cvut.x33eja.entities.Account</class>
+    <class>cz.cvut.x33eja.entities.BankBranch</class>
+    <class>cz.cvut.x33eja.entities.BankTransaction</class>
+    <class>cz.cvut.x33eja.entities.Contact</class>
+    <class>cz.cvut.x33eja.entities.Customer</class>
+    <class>cz.cvut.x33eja.entities.Employee</class>
+    <class>cz.cvut.x33eja.entities.Message</class>
+    <class>cz.cvut.x33eja.entities.Person</class>
+    <class>cz.cvut.x33eja.entities.Template</class>
+    <class>cz.cvut.x33eja.entities.UserData</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="toplink.ddl-generation" value="create-tables"/>
+    </properties>
+  </persistence-unit>
+</persistence>

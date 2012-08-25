@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/x33eja/!svn/ver/74/X33EJA/X33EJA-war/src/java/cz/cvut/x33eja/managedbeans
+END
+AccountManagedBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/x33eja/!svn/ver/74/X33EJA/X33EJA-war/src/java/cz/cvut/x33eja/managedbeans/AccountManagedBean.java
+END
+UserManagedBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/x33eja/!svn/ver/68/X33EJA/X33EJA-war/src/java/cz/cvut/x33eja/managedbeans/UserManagedBean.java
+END
+BankTransactionManagedBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/x33eja/!svn/ver/72/X33EJA/X33EJA-war/src/java/cz/cvut/x33eja/managedbeans/BankTransactionManagedBean.java
+END
+MessageManagedBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/x33eja/!svn/ver/68/X33EJA/X33EJA-war/src/java/cz/cvut/x33eja/managedbeans/MessageManagedBean.java
+END
+TemplateManagedBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/x33eja/!svn/ver/61/X33EJA/X33EJA-war/src/java/cz/cvut/x33eja/managedbeans/TemplateManagedBean.java
+END
